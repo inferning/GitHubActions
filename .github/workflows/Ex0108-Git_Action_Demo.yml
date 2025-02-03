@@ -6,12 +6,18 @@ name: A Basic Workflow
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  #  Triggers the workflow on push or pull request events but only for the "main" branch
   push:
+<<<<<<< HEAD:.github/workflows/Ex0108-Git_Action_Demo.yml
     branches: "Main"
     paths: [ ".github/workflows/*" ]
         # Allows you to run this workflow manually from the Actions tab
 
+=======
+    branches: [ "main" ]
+    paths: [ ".github/workflows/*" ]
+  # Allows you to run this workflow manually from the Actions tab
+>>>>>>> b6e224cfbb01ce2653b4dbfd08db1879ddef8a48:.github/workflows/main.yml
   workflow_dispatch:
  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -36,6 +42,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          ls -rtl
 
 
   build-api:
