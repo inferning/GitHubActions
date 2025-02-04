@@ -39,11 +39,17 @@ jobs:
   monjob2:
     name: "Le job2"
     runs-on: ubuntu-latest
-
+    need: monjob1
     env:
       Prenom: Jacques
 
     steps:
+      - name: use action-download
+      - use: actions/download-artifact@v4
+          with:
+          name: file
+          path: artifact.txt
+
       - name: step21
         id: step21_ID
         run: |
@@ -54,10 +60,5 @@ jobs:
           ls -rtl
 
       - name: step22
-        need: monjob1
-      - use: actions/download-artifact@v4
-        with:
-          name: file
-      - name: affiche le fichier
         run: cat artefact.txt
   
