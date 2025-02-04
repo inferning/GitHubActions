@@ -21,6 +21,10 @@ jobs:
         run: |
           echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
           echo "age=18" >> $GITHUB_ENV
+    
+      - name step12
+        id: step12_ID
+        run: echo "son age ${{env.age}}"
 
   monjob2:
     name: "Le job2"
@@ -30,8 +34,8 @@ jobs:
       Prenom: Jacques
 
     steps:
-      - name: step12
-        id: step12_ID
+      - name: step21
+        id: step21_ID
         run: |
           echo "Le Prenom global ${{env.Prenom}}"
           echo "Le Prenom local $Prenom"
