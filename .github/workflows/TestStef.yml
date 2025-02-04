@@ -84,8 +84,11 @@ jobs:
         id: cree_var_env
         run: |
           echo "creation des variables"
-          echo "::set-output name=varenv1::LaVariable"
-          echo "::set-output name=varenv2::$(date +'%Y-%m-%d-%H-%M')"
+          # echo "::set-output name=varenv1::LaVariable"
+          # echo "::set-output name=varenv2::$(date +'%Y-%m-%d-%H-%M')"
+          echo "varenv1=TechSckool" >> "$GITHUB_OUTPUT"
+          echo "varenv2=$(date +'%Y-%m-%d-%H-%M')" >> "$GITHUB_OUTPUT"
+
       - name: "affiche var env"
         run: |
           echo varenv1: ${{ steps.cree_var_env.outputs.varenv1 }} 
