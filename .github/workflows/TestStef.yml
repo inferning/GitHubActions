@@ -1,0 +1,22 @@
+name: TestStef
+on:
+  push:
+    branches:
+      - "main"
+
+  workflow_dispatch:
+
+jobs:
+  monjob1:
+    runs-on: ubuntu-latest
+    steps:
+      name:step11
+        echo "ceci est le step11"
+
+  monjob2:
+    runs-on: ubuntu-latest
+    steps:
+      name: step12
+        run |
+          echo "Le step12 fait un ls"
+          ls -rtl
