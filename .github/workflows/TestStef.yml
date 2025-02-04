@@ -30,7 +30,7 @@ jobs:
       
       - name: step13
          run "contenu de mon artefact" > artefact.txt
-      - uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
           with:
             name: file
             path: artefact.txt
@@ -47,8 +47,8 @@ jobs:
       - name: use action-download
         uses: actions/download-artifact@v4
           with:
-          name: file
-          path: artifact.txt
+            name: file
+            path: artifact.txt
 
       - name: step21
         id: step21_ID
