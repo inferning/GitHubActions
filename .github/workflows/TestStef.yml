@@ -29,5 +29,7 @@ jobs:
     steps:
       - name: step12
         run: |
-          echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
+          echo "Le Prenom global ${{env.Prenom}}"
+          echo "Le Prenom local $Prenom"
+          echo "Le nom ${{env.Nom}}"
           ls -rtl
