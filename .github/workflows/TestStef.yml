@@ -29,8 +29,8 @@ jobs:
           echo "mot de passe ${{secrets.MONPASSWORD}}"
       
       - name: step13
-         run "contenu de mon artefact" > artefact.txt
-        uses: actions/upload-artifact@v4
+         run: echo "contenu de mon artefact" > artefact.txt
+         uses: actions/upload-artifact@v4
           with:
             name: file
             path: artefact.txt
