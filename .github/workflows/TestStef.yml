@@ -20,7 +20,7 @@ jobs:
         id: step11_ID
         run: |
           echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
-          echo "age=18" > $GITHUB_ENV
+          echo "age=18" >> $GITHUB_ENV
 
   monjob2:
     name: "Le job2"
