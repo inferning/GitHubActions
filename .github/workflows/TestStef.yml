@@ -22,7 +22,7 @@ jobs:
           echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
           echo "age=18" >> $GITHUB_ENV
     
-      - name step12
+      - name: step12
         id: step12_ID
         run: echo "son age ${{env.age}}"
 
