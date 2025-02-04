@@ -24,7 +24,9 @@ jobs:
     
       - name: step12
         id: step12_ID
-        run: echo "son age ${{env.age}}"
+        run: |
+          echo "son age ${{env.age}}"
+          echo "mot de passe ${{MONPASSWORD}}"
 
   monjob2:
     name: "Le job2"
