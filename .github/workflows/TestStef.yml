@@ -17,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step11
-        run: echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
+        id: step11_ID
+        run: |
+          echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
+          echo "age=18" > $GITHUB_ENV
 
   monjob2:
     name: "Le job2"
@@ -28,8 +31,10 @@ jobs:
 
     steps:
       - name: step12
+        id: step12_ID
         run: |
           echo "Le Prenom global ${{env.Prenom}}"
           echo "Le Prenom local $Prenom"
           echo "Le nom ${{env.Nom}}"
+          echo "L'age ${{env.age}}"
           ls -rtl
