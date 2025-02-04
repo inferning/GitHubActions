@@ -75,3 +75,18 @@ jobs:
       - name: "affiche le secret"
         run: |
           echo "APP_SECRET: ${{secrets.APP_SECRET}}"
+
+  monjob4:
+    name: "variables env dans workflow"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "cree var env"
+        id: cree_var_env
+        run: |
+          echo "creation des variables"
+          echo "::set-output name=varenv1::LaVariable"
+          echo "::set-output name=varenv2::$(date +'%Y-%m-%d-%H-%M')"
+      - name: "affiche var env"
+        run: |
+          echo varenv1: ${{ steps.cree_var_env.outputs.varenv1 }} 
+          echo varenv2: ${{ steps.cree_var_env.outputs.varenv2 }} 
