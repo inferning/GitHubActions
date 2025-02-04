@@ -29,26 +29,26 @@ jobs:
           echo "mot de passe ${{secrets.MONPASSWORD}}"
       
       - name: step13
-         run: echo "contenu de mon artefact" > artefact.txt
-         uses: actions/upload-artifact@v4
-          with:
-            name: file
-            path: artefact.txt
-            retention-days: 10
+        run: echo "contenu de mon artefact" > artefact.txt
+        uses: actions/upload-artifact@v4
+        with:
+          name: file
+          path: artefact.txt
+          retention-days: 10
 
   monjob2:
     name: "Le job2"
     runs-on: ubuntu-latest
-    need: monjob1
+    needs: monjob1
     env:
       Prenom: Jacques
 
     steps:
       - name: use action-download
         uses: actions/download-artifact@v4
-          with:
-            name: file
-            path: artifact.txt
+        with:
+          name: file
+          path: artifact.txt
 
       - name: step21
         id: step21_ID
