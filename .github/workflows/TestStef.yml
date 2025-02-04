@@ -59,6 +59,7 @@ jobs:
           echo "Le Prenom local $Prenom"
           echo "Le nom ${{env.Nom}}"
           echo "L'age ${{env.age}}"
+          echo "varenv1=TechSckool" >> "$GITHUB_OUTPUT"
           ls -rtl
 
       - name: step22
@@ -86,10 +87,10 @@ jobs:
           echo "creation des variables"
           # echo "::set-output name=varenv1::LaVariable"
           # echo "::set-output name=varenv2::$(date +'%Y-%m-%d-%H-%M')"
-          echo "varenv1=TechSckool" >> "$GITHUB_OUTPUT"
+          #echo "varenv1=TechSckool" >> "$GITHUB_OUTPUT"
           echo "varenv2=$(date +'%Y-%m-%d-%H-%M')" >> "$GITHUB_OUTPUT"
 
       - name: "affiche var env"
         run: |
-          echo varenv1: ${{ steps.cree_var_env.outputs.varenv1 }} 
+          echo varenv1: ${{ steps.step21_ID.outputs.varenv1 }} 
           echo varenv2: ${{ steps.cree_var_env.outputs.varenv2 }} 
