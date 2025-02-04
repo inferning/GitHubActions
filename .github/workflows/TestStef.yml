@@ -29,5 +29,5 @@ jobs:
     steps:
       - name: step12
         run: |
-          echo "Bonjour ${{env.Prenom}}, ton nom est ${{env.Nom}}"
+          echo "Bonjour ${{Prenom}}, ton nom est ${{Nom}}"
           ls -rtl
