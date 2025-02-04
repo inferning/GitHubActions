@@ -14,7 +14,8 @@ jobs:
     steps:
       - name: step11
         run: echo "ceci est le step11"
-
+      - name: step12
+        run: echo "ceci est le step 12"
   monjob2:
     runs-on: ubuntu-latest
     steps:
