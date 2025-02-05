@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   hello-self-hosted-runner:
-    runs-on: [self-hosted, Windows, X64, MonLinux]
+    runs-on: self-hosted
     steps: 
     - name: run-me-inside-self-hosted-runner
       run:  echo "Howdy GitHub Actions. I know I am getting executed inside self hosted runner."
