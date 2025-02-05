@@ -1,3 +1,4 @@
+#test runner
 name: 'self hosted runner demo'
 
 on: workflow_dispatch
